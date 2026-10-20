@@ -1,6 +1,6 @@
 # Initial D Fan API
 
-頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。Hono + TypeScriptで動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
+頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。Hono + TypeScriptでCloudflare Workers上でも動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。独立した紹介ページはありません。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
 
 このMVPにはキャラクター3件、車種3件、峠名2件、バトル2件、出典6件のみを収録しています。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
 
@@ -14,18 +14,28 @@ bun run check
 bun run dev
 ```
 
-APIドキュメント: http://localhost:3000/docs
+APIドキュメント: http://localhost:8787/docs
 
-OpenAPI JSON: http://localhost:3000/openapi.json
+OpenAPI JSON: http://localhost:8787/openapi.json
 
 例:
 
 ```sh
-curl 'http://localhost:3000/api/v1/characters?q=藤原'
-curl 'http://localhost:3000/api/v1/battles?characterId=takumi-fujiwara&passId=akina'
+curl 'http://localhost:8787/api/v1/characters?q=藤原'
+curl 'http://localhost:8787/api/v1/battles?characterId=takumi-fujiwara&passId=akina'
 ```
 
-`PORT=4000 bun start`でポートを変更できます。Scalarの画面表示には配信元の外部アセットへの接続が必要です。API本体とOpenAPI JSONはローカルで動きます。
+`bun run dev`はCloudflare Workersのローカル実行環境を使います。Bunだけで起動する場合は`PORT=4000 bun start`を使えます。Scalarの画面表示には配信元の外部アセットへの接続が必要です。API本体とOpenAPI JSONはローカルで動きます。
+
+## Cloudflare Workersへの公開
+
+GitHubはソースコードを公開する場所です。GitHubだけではHonoのREST APIは稼働しません。HTTPで呼び出せるようにするにはCloudflare Workersへデプロイします。
+
+```sh
+bun run deploy
+```
+
+Wranglerが利用可能なCloudflareアカウントを選びます。複数アカウントがある場合は、公開先を確認してから選択してください。デプロイ後は表示される`https://initial-d-fan-api.<account-subdomain>.workers.dev`でAPIを呼び出せます。独自サブドメインの設定は不要で、あとから追加できます。Cloudflareの認証情報やアカウントIDはリポジトリへ保存しません。
 
 ## エンドポイント
 
@@ -53,4 +63,4 @@ curl 'http://localhost:3000/api/v1/battles?characterId=takumi-fujiwara&passId=ak
 
 このリポジトリのMITライセンスは、このプロジェクト独自のコードなど寄稿者が権利を持つ部分に適用します。作品、キャラクター、作品名、商標、出版社や自動車メーカーの文章・画像への利用許諾を与えるものではありません。出典へのリンクや非公式表記だけで第三者の権利処理が完了するわけでもありません。画像・ロゴ・コマ・台詞・長いあらすじは登録しない方針です。ホスティング、営利利用、大規模なデータ拡張の前には、利用方法に応じて権利者の条件を確認してください。
 
-既存APIと権利面の確認内容は [`RESEARCH.md`](RESEARCH.md) にまとめました。このMVPはローカルの実行可能プロジェクトとして用意しており、外部への公開・GitHubへのpushは行っていません。
+既存APIと権利面の確認内容は [`RESEARCH.md`](RESEARCH.md) にまとめました。
