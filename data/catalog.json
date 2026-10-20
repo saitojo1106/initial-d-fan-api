@@ -1,0 +1,134 @@
+{
+  "sources": [
+    {
+      "id": "yanmaga-battle-01",
+      "title": "頭文字D名勝負列伝01 AE86対RX-7（FD3S）編",
+      "url": "https://yanmaga.jp/columns/articles/5",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-battle-02",
+      "title": "頭文字D名勝負列伝02 AE86対シビック（EG6）編",
+      "url": "https://yanmaga.jp/columns/articles/4",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-battle-16",
+      "title": "頭文字D名勝負列伝16 ハチロク対スカイラインGT-R",
+      "url": "https://yanmaga.jp/columns/articles/3561",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "toyota-ae86-history",
+      "title": "歴代カローラとその時代（1）",
+      "url": "https://global.toyota/jp/detail/14095114",
+      "publisher": "トヨタ自動車",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "mazda-rx7-history",
+      "title": "マツダの歴史 1990年～1999年",
+      "url": "https://www.mazda.com/ja/about/history/1990-1999/",
+      "publisher": "マツダ",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "nissan-r32-heritage",
+      "title": "スカイライン GT-R",
+      "url": "https://www2.nissan.co.jp/HERITAGE/DETAIL/210.html",
+      "publisher": "日産自動車",
+      "checkedOn": "2026-10-20"
+    }
+  ],
+  "characters": [
+    {
+      "id": "takumi-fujiwara",
+      "name": "藤原拓海",
+      "vehicleIds": ["toyota-ae86-trueno"],
+      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+    },
+    {
+      "id": "keisuke-takahashi",
+      "name": "高橋啓介",
+      "vehicleIds": ["mazda-fd3s-rx7"],
+      "sourceIds": ["yanmaga-battle-01"]
+    },
+    {
+      "id": "takeshi-nakazato",
+      "name": "中里毅",
+      "vehicleIds": ["nissan-bnr32-gtr"],
+      "sourceIds": ["yanmaga-battle-02", "yanmaga-battle-16"]
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "toyota-ae86-trueno",
+      "manufacturer": "トヨタ",
+      "model": "スプリンタートレノ",
+      "specifications": {
+        "chassisCode": "AE86",
+        "engineFamily": "4A-G",
+        "driveLayout": "FR"
+      },
+      "sourceIds": ["yanmaga-battle-01", "toyota-ae86-history"]
+    },
+    {
+      "id": "mazda-fd3s-rx7",
+      "manufacturer": "マツダ",
+      "model": "RX-7",
+      "specifications": {
+        "chassisCode": "FD3S",
+        "engineFamily": "13B"
+      },
+      "sourceIds": ["yanmaga-battle-01", "mazda-rx7-history"]
+    },
+    {
+      "id": "nissan-bnr32-gtr",
+      "manufacturer": "日産",
+      "model": "スカイライン GT-R",
+      "specifications": {
+        "chassisCode": "BNR32",
+        "engineFamily": "RB26DETT",
+        "driveLayout": "4WD"
+      },
+      "sourceIds": ["yanmaga-battle-16", "nissan-r32-heritage"]
+    }
+  ],
+  "passes": [
+    {
+      "id": "akina",
+      "name": "秋名",
+      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+    },
+    {
+      "id": "myogi",
+      "name": "妙義",
+      "sourceIds": ["yanmaga-battle-16"]
+    }
+  ],
+  "battles": [
+    {
+      "id": "takumi-vs-keisuke-akina",
+      "passId": "akina",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+    },
+    {
+      "id": "takumi-vs-nakazato-akina",
+      "passId": "akina",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-battle-02", "yanmaga-battle-16"]
+    }
+  ]
+}
