@@ -1,8 +1,8 @@
 # Initial D Fan API
 
-頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。Hono + TypeScriptでCloudflare Workers上でも動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。独立した紹介ページはありません。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
+頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。Hono + TypeScriptでCloudflare Workers上でも動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。ランディングページは用意していません。入口は`/docs`です。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
 
-現在はアニメFirst Stageで描かれた主要なドライバー対戦7件を収録しています。キャラクター7件、車種7件、峠名3件、出典15件です。全登場人物や脇の対戦を網羅したものではなく、Stage区分のフィールドもありません。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
+現在はアニメFirst Stageで描かれた主要なドライバー対戦7件を収録しています。キャラクター7件、車種7件、峠名3件、出典14件です。全登場人物や脇の対戦を網羅したものではなく、Stage区分のフィールドもありません。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
 
 ソースコード: https://github.com/saitojo1106/initial-d-fan-api
 
@@ -37,7 +37,7 @@ curl 'http://localhost:8787/api/v1/battles?characterId=takumi-fujiwara&passId=ak
 
 ## Cloudflare Workersへの公開
 
-GitHubはソースコードを公開する場所です。GitHubだけではHonoのREST APIは稼働しません。HTTPで呼び出せるようにするにはCloudflare Workersへデプロイします。
+HTTPで呼び出せるようにするにはCloudflare Workersへデプロイします。
 
 ```sh
 bun run deploy
@@ -58,6 +58,29 @@ bun run deploy
 | GET | `/api/v1/battles` | バトル一覧。`characterId`と`passId`で絞り込み可能 |
 | GET | `/api/v1/battles/{id}` | 参加者、車種、峠、勝者を参照 |
 | GET | `/api/v1/sources` | 出典一覧 |
+
+`/api/v1/characters/takumi-fujiwara`のレスポンス例:
+
+```json
+{
+  "data": {
+    "id": "takumi-fujiwara",
+    "name": "藤原拓海",
+    "vehicleIds": [
+      "toyota-ae86-trueno"
+    ],
+    "sourceIds": [
+      "yanmaga-battle-01",
+      "yanmaga-battle-16"
+    ],
+    "record": {
+      "wins": 6,
+      "losses": 0,
+      "total": 6
+    }
+  }
+}
+```
 
 一覧は `{ "data": [...], "count": 数 }`、詳細は `{ "data": {...} }`、見つからない詳細は404と `{ "error": { "code": "NOT_FOUND", "message": "..." } }`を返します。IDは安定した英字スラッグです。バトルの`participants`は各参加者の`characterId`と`vehicleId`を持ち、`passId`と`winnerCharacterId`で関係を表します。
 

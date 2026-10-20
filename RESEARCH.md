@@ -29,7 +29,7 @@ GitHub CLIで`initial d api`を検索し、以下の公開リポジトリを確�
 ## シードデータの主な確認先
 
 - [バンダイチャンネルのFirst Stage各話案内](https://www.b-ch.com/titles/4405/): 収録する対戦がFirst Stageに含まれることと登場人物・コースを照合。
-- [ヤンマガWeb 名勝負列伝01](https://yanmaga.jp/columns/articles/5)、[02](https://yanmaga.jp/columns/articles/4)、[03](https://yanmaga.jp/columns/articles/8)、[16](https://yanmaga.jp/columns/articles/3561)、[17](https://yanmaga.jp/columns/articles/3616): 拓海の対戦相手・車種・勝敗を照合。17の勝敗は[04](https://yanmaga.jp/columns/articles/6)の振り返りでも確認。
+- [ヤンマガWeb 名勝負列伝01](https://yanmaga.jp/columns/articles/5)、[02](https://yanmaga.jp/columns/articles/4)、[03](https://yanmaga.jp/columns/articles/8)、[16](https://yanmaga.jp/columns/articles/3561)、[17](https://yanmaga.jp/columns/articles/3616): 拓海の対戦相手・車種・勝敗を照合。
 - [ヤンマガWeb シルエイティ編](https://yanmaga.jp/columns/articles/479)と[中里毅編](https://yanmaga.jp/columns/articles/2639): 碓氷戦と啓介対中里戦の参加者・勝敗を照合。
 - [トヨタの車史](https://global.toyota/jp/detail/14095114)、[マツダのRX-7資料](https://www.mazda.com/ja/about/history/greatcar/rx-7/02/)、[日産のヘリテージ資料](https://www.nissan.co.jp/HERITAGE/DETAIL/198.html)、[ホンダのCIVIC資料](https://www.honda.co.jp/factbook/auto/CIVIC/19910910/cv91-013.html): ベース車両の確認できた型式やエンジン系列など。
 

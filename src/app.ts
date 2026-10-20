@@ -16,7 +16,7 @@ app.use('*', cors({ origin: '*', allowMethods: ['GET', 'HEAD', 'OPTIONS'] }))
 const listResponse = <T extends z.ZodType>(item: T) => z.object({ data: z.array(item), count: z.number().int().nonnegative() })
 const detailResponse = <T extends z.ZodType>(item: T) => z.object({ data: item })
 const errorResponse = z.object({ error: z.object({ code: z.literal('NOT_FOUND'), message: z.string() }) })
-const idParams = z.object({ id: z.string().min(1).openapi({ param: { name: 'id', in: 'path' }, example: 'akina' }) })
+const idParams = (example: string) => z.object({ id: z.string().min(1).openapi({ param: { name: 'id', in: 'path' }, example }) })
 const characterWithRecordSchema = characterSchema.extend({
   record: z.object({ wins: z.number().int(), losses: z.number().int(), total: z.number().int() }),
 }).openapi('CharacterWithRecord')
@@ -43,7 +43,7 @@ app.openapi(createRoute({
 
 app.openapi(createRoute({
   method: 'get', path: '/api/v1/characters/{id}', tags: ['Characters'], summary: 'Get a character',
-  request: { params: idParams },
+  request: { params: idParams('takumi-fujiwara') },
   responses: {
     200: { description: 'Character and record from the included battles only', content: { 'application/json': { schema: detailResponse(characterWithRecordSchema) } } },
     404: { description: 'Character not found', content: { 'application/json': { schema: errorResponse } } },
@@ -61,7 +61,7 @@ app.openapi(createRoute({
 
 app.openapi(createRoute({
   method: 'get', path: '/api/v1/vehicles/{id}', tags: ['Vehicles'], summary: 'Get a vehicle model',
-  request: { params: idParams },
+  request: { params: idParams('toyota-ae86-trueno') },
   responses: {
     200: { description: 'Vehicle model', content: { 'application/json': { schema: detailResponse(vehicleSchema) } } },
     404: { description: 'Vehicle not found', content: { 'application/json': { schema: errorResponse } } },
@@ -73,13 +73,13 @@ app.openapi(createRoute({
 })
 
 app.openapi(createRoute({
-  method: 'get', path: '/api/v1/passes', tags: ['Passes'], summary: 'List fictional pass names',
-  responses: { 200: { description: 'Pass names without geographic coordinates', content: { 'application/json': { schema: listResponse(passSchema) } } } },
+  method: 'get', path: '/api/v1/passes', tags: ['Passes'], summary: 'List pass names used in the story',
+  responses: { 200: { description: 'Pass names as used in the story, without geographic coordinates', content: { 'application/json': { schema: listResponse(passSchema) } } } },
 }), (c) => c.json(list(catalog.passes), 200))
 
 app.openapi(createRoute({
   method: 'get', path: '/api/v1/passes/{id}', tags: ['Passes'], summary: 'Get a pass',
-  request: { params: idParams },
+  request: { params: idParams('akina') },
   responses: {
     200: { description: 'Pass', content: { 'application/json': { schema: detailResponse(passSchema) } } },
     404: { description: 'Pass not found', content: { 'application/json': { schema: errorResponse } } },
@@ -105,7 +105,7 @@ app.openapi(createRoute({
 
 app.openapi(createRoute({
   method: 'get', path: '/api/v1/battles/{id}', tags: ['Battles'], summary: 'Get a documented battle',
-  request: { params: idParams },
+  request: { params: idParams('takumi-vs-keisuke-akina') },
   responses: {
     200: { description: 'Battle', content: { 'application/json': { schema: detailResponse(battleSchema) } } },
     404: { description: 'Battle not found', content: { 'application/json': { schema: errorResponse } } },
@@ -126,9 +126,10 @@ app.doc31('/openapi.json', {
   info: {
     title: 'Initial D Fan API',
     version: '0.1.0',
-    description: 'Unofficial, non-affiliated read-only API covering seven selected First Stage driver battles. Character records count only battles included in this dataset. No images, maps or story text are provided.',
+    description: 'Unofficial, non-affiliated read-only API covering selected driver battles from the First Stage anime. Character records count only battles included in this dataset. No images, maps or story text are provided.',
   },
+  externalDocs: { description: 'Source code, data and rights notes', url: 'https://github.com/saitojo1106/initial-d-fan-api' },
 })
-app.get('/docs', Scalar({ url: '/openapi.json' }))
+app.get('/docs', Scalar({ url: '/openapi.json', pageTitle: 'Initial D Fan API' }))
 
 export default app

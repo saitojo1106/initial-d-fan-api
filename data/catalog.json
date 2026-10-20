@@ -22,13 +22,6 @@
       "checkedOn": "2026-10-20"
     },
     {
-      "id": "yanmaga-battle-04",
-      "title": "頭文字D名勝負列伝04 AE86対ランエボIV編",
-      "url": "https://yanmaga.jp/columns/articles/6",
-      "publisher": "ヤンマガWeb",
-      "checkedOn": "2026-10-20"
-    },
-    {
       "id": "yanmaga-battle-16",
       "title": "頭文字D名勝負列伝16 ハチロク対スカイラインGT-R",
       "url": "https://yanmaga.jp/columns/articles/3561",
@@ -296,7 +289,7 @@
         { "characterId": "kenta-nakamura", "vehicleId": "nissan-s14-silvia" }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-17", "yanmaga-battle-04", "first-stage-episodes"]
+      "sourceIds": ["yanmaga-battle-17", "first-stage-episodes"]
     },
     {
       "id": "takumi-vs-ryosuke-akina",
