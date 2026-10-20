@@ -25,7 +25,7 @@ GitHub CLIで`initial d api`を検索し、以下の公開リポジトリを確�
 ## シードデータの主な確認先
 
 - [ヤンマガWeb 名勝負列伝01](https://yanmaga.jp/columns/articles/5): 藤原拓海・高橋啓介、AE86・FD3S、秋名での対戦。
-- [ヤンマガWeb 名勝負列伝02](https://yanmaga.jp/columns/articles/4)と[名勝負列伝16](https://yanmaga.jp/columns/articles/3561): 中里毅との対戦、勝敗と車種。
+- [ヤンマガWeb 名勝負列伝16](https://yanmaga.jp/columns/articles/3561): 中里毅との対戦、勝敗と車種。
 - [トヨタの車史](https://global.toyota/jp/detail/14095114)、[マツダの車史](https://www.mazda.com/ja/about/history/1990-1999/)、[日産のヘリテージ資料](https://www2.nissan.co.jp/HERITAGE/DETAIL/210.html): ベース車両の型式やエンジン系列など。
 
 確認ページへのリンクは検証用です。ページの文章、写真、図版はAPIに保存していません。

@@ -8,13 +8,6 @@
       "checkedOn": "2026-10-20"
     },
     {
-      "id": "yanmaga-battle-02",
-      "title": "頭文字D名勝負列伝02 AE86対シビック（EG6）編",
-      "url": "https://yanmaga.jp/columns/articles/4",
-      "publisher": "ヤンマガWeb",
-      "checkedOn": "2026-10-20"
-    },
-    {
       "id": "yanmaga-battle-16",
       "title": "頭文字D名勝負列伝16 ハチロク対スカイラインGT-R",
       "url": "https://yanmaga.jp/columns/articles/3561",
@@ -60,7 +53,7 @@
       "id": "takeshi-nakazato",
       "name": "中里毅",
       "vehicleIds": ["nissan-bnr32-gtr"],
-      "sourceIds": ["yanmaga-battle-02", "yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-16"]
     }
   ],
   "vehicles": [
@@ -118,7 +111,7 @@
         { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-01"]
     },
     {
       "id": "takumi-vs-nakazato-akina",
@@ -128,7 +121,7 @@
         { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-02", "yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-16"]
     }
   ]
 }
