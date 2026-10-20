@@ -4,13 +4,13 @@
 
 このMVPにはキャラクター3件、車種3件、峠名2件、バトル2件、出典6件のみを収録しています。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
 
-公開API: https://api.saitoudayooooon-jo.com
-
-公開API仕様: https://api.saitoudayooooon-jo.com/openapi.json
-
 ソースコード: https://github.com/saitojo1106/initial-d-fan-api
 
-例: `curl 'https://api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara'`
+公開API: https://api.saitoudayooooon-jo.com
+
+APIドキュメント: https://api.saitoudayooooon-jo.com/docs
+
+OpenAPI JSON: https://api.saitoudayooooon-jo.com/openapi.json
 
 ## 起動
 
@@ -43,7 +43,7 @@ GitHubはソースコードを公開する場所です。GitHubだけではHono�
 bun run deploy
 ```
 
-Wranglerが利用可能なCloudflareアカウントを選びます。複数アカウントがある場合は、公開先を確認してから選択してください。デプロイ後は表示される`https://initial-d-fan-api.<account-subdomain>.workers.dev`でAPIを呼び出せます。独自サブドメインの設定は不要で、あとから追加できます。Cloudflareの認証情報やアカウントIDはリポジトリへ保存しません。
+`wrangler.jsonc`は`api.saitoudayooooon-jo.com`をこのWorkerのカスタムドメインに設定しています。このドメインを管理するCloudflareアカウントで実行してください。複数アカウントにログインしている場合は、実行時に環境変数`CLOUDFLARE_ACCOUNT_ID`で公開先を指定します。別のCloudflareアカウントへフォークして公開する場合は、先に`routes`を自分が管理するドメインへ変更してください。認証情報やアカウントIDはリポジトリへ保存しません。
 
 ## エンドポイント
 
