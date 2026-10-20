@@ -126,7 +126,7 @@ app.doc31('/openapi.json', {
   info: {
     title: 'Initial D Fan API',
     version: '0.1.0',
-    description: 'Unofficial, non-affiliated read-only API. Character records count only battles included in this dataset. No images, maps or story text are provided.',
+    description: 'Unofficial, non-affiliated read-only API covering seven selected First Stage driver battles. Character records count only battles included in this dataset. No images, maps or story text are provided.',
   },
 })
 app.get('/docs', Scalar({ url: '/openapi.json' }))

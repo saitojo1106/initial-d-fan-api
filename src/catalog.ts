@@ -24,7 +24,7 @@ export const vehicleSchema = z.object({
   manufacturer: z.string().min(1),
   model: z.string().min(1),
   specifications: z.object({
-    chassisCode: z.string().min(1),
+    chassisCode: z.string().min(1).optional(),
     engineFamily: z.string().min(1).optional(),
     driveLayout: z.enum(['FR', 'FF', '4WD', 'MR', 'RR']).optional(),
   }).strict(),

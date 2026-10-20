@@ -8,10 +8,59 @@
       "checkedOn": "2026-10-20"
     },
     {
+      "id": "yanmaga-battle-02",
+      "title": "頭文字D名勝負列伝02 AE86対シビック（EG6）編",
+      "url": "https://yanmaga.jp/columns/articles/4",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-battle-03",
+      "title": "頭文字D名勝負列伝03 AE86対RX-7（FC3S）編",
+      "url": "https://yanmaga.jp/columns/articles/8",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-battle-04",
+      "title": "頭文字D名勝負列伝04 AE86対ランエボIV編",
+      "url": "https://yanmaga.jp/columns/articles/6",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
       "id": "yanmaga-battle-16",
       "title": "頭文字D名勝負列伝16 ハチロク対スカイラインGT-R",
       "url": "https://yanmaga.jp/columns/articles/3561",
       "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-battle-17",
+      "title": "頭文字D名勝負列伝17 ハチロク対S14シルビア",
+      "url": "https://yanmaga.jp/columns/articles/3616",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-sileighty",
+      "title": "頭文字Dを彩った伝説の名車列伝01 日産シルエイティ編",
+      "url": "https://yanmaga.jp/columns/articles/479",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "yanmaga-nakazato",
+      "title": "頭文字D人物列伝05 中里毅編",
+      "url": "https://yanmaga.jp/columns/articles/2639",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "first-stage-episodes",
+      "title": "頭文字D First Stage エピソード一覧",
+      "url": "https://www.b-ch.com/titles/4405/",
+      "publisher": "バンダイチャンネル",
       "checkedOn": "2026-10-20"
     },
     {
@@ -29,9 +78,30 @@
       "checkedOn": "2026-10-20"
     },
     {
+      "id": "mazda-fc-rx7-history",
+      "title": "RX-7 第2章 FC/13B Rotary",
+      "url": "https://www.mazda.com/ja/about/history/greatcar/rx-7/02/",
+      "publisher": "マツダ",
+      "checkedOn": "2026-10-20"
+    },
+    {
       "id": "nissan-r32-heritage",
       "title": "スカイライン GT-R",
       "url": "https://www2.nissan.co.jp/HERITAGE/DETAIL/210.html",
+      "publisher": "日産自動車",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "honda-eg6-factbook",
+      "title": "CIVIC 1991.9",
+      "url": "https://www.honda.co.jp/factbook/auto/CIVIC/19910910/cv91-013.html",
+      "publisher": "本田技研工業",
+      "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "nissan-s14-heritage",
+      "title": "シルビア K's タイプS",
+      "url": "https://www.nissan.co.jp/HERITAGE/DETAIL/198.html",
       "publisher": "日産自動車",
       "checkedOn": "2026-10-20"
     }
@@ -47,13 +117,37 @@
       "id": "keisuke-takahashi",
       "name": "高橋啓介",
       "vehicleIds": ["mazda-fd3s-rx7"],
-      "sourceIds": ["yanmaga-battle-01"]
+      "sourceIds": ["yanmaga-battle-01", "yanmaga-nakazato"]
     },
     {
       "id": "takeshi-nakazato",
       "name": "中里毅",
       "vehicleIds": ["nissan-bnr32-gtr"],
-      "sourceIds": ["yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-16", "yanmaga-nakazato"]
+    },
+    {
+      "id": "shingo-shoji",
+      "name": "庄司慎吾",
+      "vehicleIds": ["honda-eg6-civic"],
+      "sourceIds": ["yanmaga-battle-02"]
+    },
+    {
+      "id": "mako-sato",
+      "name": "佐藤真子",
+      "vehicleIds": ["nissan-sileighty"],
+      "sourceIds": ["yanmaga-sileighty"]
+    },
+    {
+      "id": "kenta-nakamura",
+      "name": "中村賢太",
+      "vehicleIds": ["nissan-s14-silvia"],
+      "sourceIds": ["yanmaga-battle-17"]
+    },
+    {
+      "id": "ryosuke-takahashi",
+      "name": "高橋涼介",
+      "vehicleIds": ["mazda-fc3s-rx7"],
+      "sourceIds": ["yanmaga-battle-03"]
     }
   ],
   "vehicles": [
@@ -88,6 +182,42 @@
         "driveLayout": "4WD"
       },
       "sourceIds": ["yanmaga-battle-16", "nissan-r32-heritage"]
+    },
+    {
+      "id": "honda-eg6-civic",
+      "manufacturer": "ホンダ",
+      "model": "シビック",
+      "specifications": {
+        "chassisCode": "EG6",
+        "driveLayout": "FF"
+      },
+      "sourceIds": ["yanmaga-battle-02", "honda-eg6-factbook"]
+    },
+    {
+      "id": "nissan-sileighty",
+      "manufacturer": "日産",
+      "model": "シルエイティ",
+      "specifications": {},
+      "sourceIds": ["yanmaga-sileighty"]
+    },
+    {
+      "id": "nissan-s14-silvia",
+      "manufacturer": "日産",
+      "model": "シルビア Q's",
+      "specifications": {
+        "chassisCode": "S14"
+      },
+      "sourceIds": ["yanmaga-battle-17", "nissan-s14-heritage"]
+    },
+    {
+      "id": "mazda-fc3s-rx7",
+      "manufacturer": "マツダ",
+      "model": "サバンナ RX-7",
+      "specifications": {
+        "chassisCode": "FC3S",
+        "engineFamily": "13B"
+      },
+      "sourceIds": ["yanmaga-battle-03", "mazda-fc-rx7-history"]
     }
   ],
   "passes": [
@@ -99,7 +229,12 @@
     {
       "id": "myogi",
       "name": "妙義",
-      "sourceIds": ["yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-16", "yanmaga-battle-17", "first-stage-episodes"]
+    },
+    {
+      "id": "usui",
+      "name": "碓氷",
+      "sourceIds": ["yanmaga-sileighty", "first-stage-episodes"]
     }
   ],
   "battles": [
@@ -111,7 +246,7 @@
         { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-01"]
+      "sourceIds": ["yanmaga-battle-01", "first-stage-episodes"]
     },
     {
       "id": "takumi-vs-nakazato-akina",
@@ -121,7 +256,57 @@
         { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-16"]
+      "sourceIds": ["yanmaga-battle-16", "first-stage-episodes"]
+    },
+    {
+      "id": "takumi-vs-shingo-akina",
+      "passId": "akina",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "shingo-shoji", "vehicleId": "honda-eg6-civic" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-battle-02", "first-stage-episodes"]
+    },
+    {
+      "id": "takumi-vs-mako-usui",
+      "passId": "usui",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "mako-sato", "vehicleId": "nissan-sileighty" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-sileighty", "first-stage-episodes"]
+    },
+    {
+      "id": "keisuke-vs-nakazato-myogi",
+      "passId": "myogi",
+      "participants": [
+        { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" },
+        { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
+      ],
+      "winnerCharacterId": "keisuke-takahashi",
+      "sourceIds": ["yanmaga-nakazato", "first-stage-episodes"]
+    },
+    {
+      "id": "takumi-vs-kenta-myogi",
+      "passId": "myogi",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "kenta-nakamura", "vehicleId": "nissan-s14-silvia" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-battle-17", "yanmaga-battle-04", "first-stage-episodes"]
+    },
+    {
+      "id": "takumi-vs-ryosuke-akina",
+      "passId": "akina",
+      "participants": [
+        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
+        { "characterId": "ryosuke-takahashi", "vehicleId": "mazda-fc3s-rx7" }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": ["yanmaga-battle-03", "first-stage-episodes"]
     }
   ]
 }
