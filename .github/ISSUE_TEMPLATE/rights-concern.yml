@@ -1,0 +1,24 @@
+name: 権利上の懸念・削除依頼
+description: 収録内容が権利を侵害していると考える場合や、削除を求める場合に使ってください。
+title: "[rights] "
+labels: ["rights"]
+body:
+  - type: textarea
+    id: target
+    attributes:
+      label: 対象のIDまたはURL
+      description: 該当するデータのIDやAPIのURLを書いてください。
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 懸念の内容
+      description: どの内容が、どの権利に関わると考えるかを書いてください。
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 連絡先（任意）
+      description: 公開Issueに書きたくない場合は空欄にし、GitHubプロフィールの連絡手段をお知らせください。

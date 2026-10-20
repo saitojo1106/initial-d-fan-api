@@ -92,7 +92,7 @@ Cloudflareの制限により、Python標準ライブラリ`urllib`の既定User-
 
 ## データと出典
 
-データは [`data/catalog.json`](data/catalog.json) にあります。各項目の`sourceIds`が`/api/v1/sources`の出典を指します。出典URL、発行元、確認日を保持し、起動時にスキーマ、IDの重複、参照先、バトルの参加者と勝者を検証します。収録範囲はFirst Stageの配信元による各話案内、勝敗はヤンマガWebの記事、車種の一般仕様は自動車メーカーの資料で照合しました。文章は転載せず、短い事実項目として入力しています。追加ルールは [`CONTRIBUTING.md`](CONTRIBUTING.md) を参照してください。
+データは [`data/catalog.json`](data/catalog.json) にあります。各項目の`sourceIds`が`/api/v1/sources`の出典を指します。出典URL、発行元、確認日を保持し、起動時にスキーマ、IDの重複、参照先、バトルの参加者と勝者を検証します。収録範囲はFirst Stageの配信元による各話案内、勝敗はヤンマガWebの記事、車種の一般仕様は自動車メーカーの資料で照合しました。文章は転載せず、短い事実項目として入力しています。データの変更は管理者だけが行います。追加・訂正の提案の出し方は [`CONTRIBUTING.md`](CONTRIBUTING.md) を参照してください。
 
 ## 権利と公開前の確認
 
@@ -100,4 +100,4 @@ Cloudflareの制限により、Python標準ライブラリ`urllib`の既定User-
 
 既存APIと権利面の確認内容は [`RESEARCH.md`](RESEARCH.md) にまとめました。
 
-データの誤りや権利上の懸念は、[GitHub Issues](https://github.com/saitojo1106/initial-d-fan-api/issues)で知らせてください。
+データの追加・訂正の提案、誤りの報告、権利上の懸念は、[GitHub Issues](https://github.com/saitojo1106/initial-d-fan-api/issues/new/choose)で知らせてください。Pull Requestは受け付けていません。

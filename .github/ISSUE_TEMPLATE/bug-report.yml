@@ -1,0 +1,23 @@
+name: 不具合報告
+description: APIやドキュメントの動作がおかしい場合に使ってください。
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: リクエストしたURL
+      placeholder: https://api.saitoudayooooon-jo.com/api/v1/characters?q=藤原
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した結果と実際の結果
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 利用環境
+      description: curl、ブラウザー、言語とライブラリ名など。

@@ -1,0 +1,52 @@
+name: データの追加・訂正
+description: キャラクター、車種、峠名、バトルの追加や訂正を提案します。反映は管理者が行います。
+title: "[data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提案の条件は [CONTRIBUTING.md](https://github.com/saitojo1106/initial-d-fan-api/blob/main/CONTRIBUTING.md) にあります。画像、台詞、記事本文、長いあらすじは貼らないでください。
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 種別
+      options:
+        - 追加
+        - 訂正
+        - 削除
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 対象のIDまたは項目名
+      description: 訂正・削除の場合は既存のID。追加の場合は項目名（例「高橋涼介」「赤城」）。
+      placeholder: takumi-vs-keisuke-akina
+    validations:
+      required: true
+  - type: textarea
+    id: facts
+    attributes:
+      label: 確認した事実
+      description: バトルはドライバー2名、使用車種、峠名、勝者を書いてください。車両仕様はメーカー資料で確認できた項目だけ。
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 出典URLと該当箇所
+      description: 一次資料または権利者の公開資料。巻・話、公式記事名など事実が分かる場所を示してください。
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: 権利上の確認
+      options:
+        - label: 画像、台詞、記事本文、長いあらすじを含めていません
+          required: true
+        - label: 外部Wikiや既存APIからの一括コピーではなく、各事実を出典で確認しました
+          required: true
+        - label: 対象はMFゴーストや地図・座標データではありません
+          required: true
