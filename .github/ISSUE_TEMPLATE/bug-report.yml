@@ -7,7 +7,7 @@ body:
     id: url
     attributes:
       label: リクエストしたURL
-      placeholder: https://api.saitoudayooooon-jo.com/api/v1/characters?q=藤原
+      placeholder: https://initial-d-fan-api.saitoudayooooon-jo.com/api/v1/characters?q=藤原
     validations:
       required: true
   - type: textarea

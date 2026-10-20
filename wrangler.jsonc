@@ -6,6 +6,10 @@
   "workers_dev": false,
   "routes": [
     {
+      "pattern": "initial-d-fan-api.saitoudayooooon-jo.com",
+      "custom_domain": true
+    },
+    {
       "pattern": "api.saitoudayooooon-jo.com",
       "custom_domain": true
     }

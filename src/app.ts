@@ -11,7 +11,18 @@ import {
   vehicleSchema,
 } from './catalog'
 
+const legacyHostname = 'api.saitoudayooooon-jo.com'
+const hostname = 'initial-d-fan-api.saitoudayooooon-jo.com'
+
 const app = new OpenAPIHono()
+app.use('*', async (c, next) => {
+  const url = new URL(c.req.url)
+  if (url.hostname === legacyHostname) {
+    url.hostname = hostname
+    return c.redirect(url.href, 301)
+  }
+  await next()
+})
 app.use('*', cors({ origin: '*', allowMethods: ['GET', 'HEAD', 'OPTIONS'] }))
 const listResponse = <T extends z.ZodType>(item: T) => z.object({ data: z.array(item), count: z.number().int().nonnegative() })
 const detailResponse = <T extends z.ZodType>(item: T) => z.object({ data: item })

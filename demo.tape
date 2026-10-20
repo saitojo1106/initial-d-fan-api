@@ -13,7 +13,7 @@ Set Theme "Catppuccin Mocha"
 Set TypingSpeed 30ms
 
 Sleep 500ms
-Type "curl -s https://api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara | jq"
+Type "curl -s https://initial-d-fan-api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara | jq"
 Sleep 300ms
 Enter
 Sleep 3.5s
@@ -23,7 +23,7 @@ Type "clear"
 Enter
 Show
 
-Type "curl -s 'https://api.saitoudayooooon-jo.com/api/v1/battles?passId=akina' | jq '.data[] | {id, winnerCharacterId}'"
+Type "curl -s 'https://initial-d-fan-api.saitoudayooooon-jo.com/api/v1/battles?passId=akina' | jq '.data[] | {id, winnerCharacterId}'"
 Sleep 300ms
 Enter
 Sleep 3s
@@ -33,7 +33,7 @@ Type "clear"
 Enter
 Show
 
-Type "curl -s https://api.saitoudayooooon-jo.com/api/v1/vehicles/toyota-ae86-trueno | jq .data.specifications"
+Type "curl -s https://initial-d-fan-api.saitoudayooooon-jo.com/api/v1/vehicles/toyota-ae86-trueno | jq .data.specifications"
 Sleep 300ms
 Enter
 Sleep 3.5s

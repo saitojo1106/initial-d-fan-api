@@ -4,14 +4,14 @@
 
 ![API demo](assets/demo.gif)
 
-- 公開API: https://api.saitoudayooooon-jo.com
-- APIドキュメント: https://api.saitoudayooooon-jo.com/docs
-- OpenAPI JSON: https://api.saitoudayooooon-jo.com/openapi.json
+- 公開API: https://initial-d-fan-api.saitoudayooooon-jo.com
+- APIドキュメント: https://initial-d-fan-api.saitoudayooooon-jo.com/docs
+- OpenAPI JSON: https://initial-d-fan-api.saitoudayooooon-jo.com/openapi.json
 
 ## 試す
 
 ```sh
-curl -s https://api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara | jq
+curl -s https://initial-d-fan-api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara | jq
 ```
 
 ## 概要
@@ -55,7 +55,7 @@ HTTPで呼び出せるようにするにはCloudflare Workersへデプロイし�
 bun run deploy
 ```
 
-`wrangler.jsonc`は`api.saitoudayooooon-jo.com`をこのWorkerのカスタムドメインに設定しています。このドメインを管理するCloudflareアカウントで実行してください。複数アカウントにログインしている場合は、実行時に環境変数`CLOUDFLARE_ACCOUNT_ID`で公開先を指定します。別のCloudflareアカウントへフォークして公開する場合は、先に`routes`を自分が管理するドメインへ変更してください。認証情報やアカウントIDはリポジトリへ保存しません。
+`wrangler.jsonc`は`initial-d-fan-api.saitoudayooooon-jo.com`をこのWorkerのカスタムドメインに設定しています。以前の`api.saitoudayooooon-jo.com`も当面はカスタムドメインとして残し、新しいホスト名へ301で転送しています。このドメインを管理するCloudflareアカウントで実行してください。複数アカウントにログインしている場合は、実行時に環境変数`CLOUDFLARE_ACCOUNT_ID`で公開先を指定します。別のCloudflareアカウントへフォークして公開する場合は、先に`routes`を自分が管理するドメインへ変更してください。認証情報やアカウントIDはリポジトリへ保存しません。
 
 ## エンドポイント
 
