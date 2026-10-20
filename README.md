@@ -1,16 +1,28 @@
 # Initial D Fan API
 
-頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。Hono + TypeScriptでCloudflare Workers上でも動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。ランディングページは用意していません。入口は`/docs`です。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
+頭文字Dのキャラクター、車種、峠、バトルを参照できる非公式・非提携の読み取り専用REST APIです。講談社、しげの秀一氏、自動車メーカーその他の権利者による公認・後援はありません。
+
+![API demo](assets/demo.gif)
+
+- 公開API: https://api.saitoudayooooon-jo.com
+- APIドキュメント: https://api.saitoudayooooon-jo.com/docs
+- OpenAPI JSON: https://api.saitoudayooooon-jo.com/openapi.json
+
+## 試す
+
+```sh
+curl -s https://api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara | jq
+```
+
+## 概要
+
+Hono + TypeScriptでCloudflare Workers上でも動き、OpenAPI 3.1仕様とScalarのドキュメント画面を提供します。ランディングページは用意していません。入口は`/docs`です。
 
 現在はアニメFirst Stageで描かれた主要なドライバー対戦7件を収録しています。キャラクター7件、車種7件、峠名3件、出典14件です。全登場人物や脇の対戦を網羅したものではなく、Stage区分のフィールドもありません。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
 
 ソースコード: https://github.com/saitojo1106/initial-d-fan-api
 
-公開API: https://api.saitoudayooooon-jo.com
-
-APIドキュメント: https://api.saitoudayooooon-jo.com/docs
-
-OpenAPI JSON: https://api.saitoudayooooon-jo.com/openapi.json
+冒頭のデモは [`demo.tape`](demo.tape) から [VHS](https://github.com/charmbracelet/vhs) で `vhs demo.tape` を実行すると再生成できます。
 
 ## 起動
 
