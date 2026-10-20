@@ -1,5 +1,6 @@
 import { createRoute, OpenAPIHono, z } from '@hono/zod-openapi'
 import { Scalar } from '@scalar/hono-api-reference'
+import { cors } from 'hono/cors'
 import {
   battleSchema,
   catalog,
@@ -11,6 +12,7 @@ import {
 } from './catalog'
 
 const app = new OpenAPIHono()
+app.use('*', cors({ origin: '*', allowMethods: ['GET', 'HEAD', 'OPTIONS'] }))
 const listResponse = <T extends z.ZodType>(item: T) => z.object({ data: z.array(item), count: z.number().int().nonnegative() })
 const detailResponse = <T extends z.ZodType>(item: T) => z.object({ data: item })
 const errorResponse = z.object({ error: z.object({ code: z.literal('NOT_FOUND'), message: z.string() }) })

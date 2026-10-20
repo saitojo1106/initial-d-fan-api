@@ -8,6 +8,8 @@
 
 公開API仕様: https://api.saitoudayooooon-jo.com/openapi.json
 
+ソースコード: https://github.com/saitojo1106/initial-d-fan-api
+
 例: `curl 'https://api.saitoudayooooon-jo.com/api/v1/characters/takumi-fujiwara'`
 
 ## 起動
@@ -59,6 +61,8 @@ Wranglerが利用可能なCloudflareアカウントを選びます。複数ア�
 
 一覧は `{ "data": [...], "count": 数 }`、詳細は `{ "data": {...} }`、見つからない詳細は404と `{ "error": { "code": "NOT_FOUND", "message": "..." } }`を返します。IDは安定した英字スラッグです。バトルの`participants`は各参加者の`characterId`と`vehicleId`を持ち、`passId`と`winnerCharacterId`で関係を表します。
 
+読み取り専用の公開APIとして、ブラウザーからのクロスオリジンGETリクエストを許可しています。
+
 `record`は**このリポジトリに収録したバトルの集計**であり、作品全体の通算戦績ではありません。車種の`specifications`は実在するベース車両の一般的な型式・エンジン系列等で、作中車両の改造状態や出力値を表しません。確認できない仕様は省略します。
 
 ## データと出典
@@ -70,3 +74,5 @@ Wranglerが利用可能なCloudflareアカウントを選びます。複数ア�
 このリポジトリのMITライセンスは、このプロジェクト独自のコードなど寄稿者が権利を持つ部分に適用します。作品、キャラクター、作品名、商標、出版社や自動車メーカーの文章・画像への利用許諾を与えるものではありません。出典へのリンクや非公式表記だけで第三者の権利処理が完了するわけでもありません。画像・ロゴ・コマ・台詞・長いあらすじは登録しない方針です。営利利用や大規模なデータ拡張の前には、利用方法に応じて権利者の条件を確認してください。
 
 既存APIと権利面の確認内容は [`RESEARCH.md`](RESEARCH.md) にまとめました。
+
+データの誤りや権利上の懸念は、[GitHub Issues](https://github.com/saitojo1106/initial-d-fan-api/issues)で知らせてください。
