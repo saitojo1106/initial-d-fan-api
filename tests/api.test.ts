@@ -11,7 +11,29 @@ describe('read-only catalog API', () => {
     expect(detail.status).toBe(200)
     const character = (await detail.json()).data
     expect(character.vehicleIds).toEqual(['toyota-ae86-trueno'])
-    expect(character.record).toEqual({ wins: 2, losses: 0, total: 2 })
+    expect(character.record).toEqual({ wins: 6, losses: 0, total: 6 })
+  })
+
+  test('includes the verified First Stage driver battles and their results', async () => {
+    const response = await app.request('/api/v1/battles')
+    expect(response.status).toBe(200)
+    const { data, count } = await response.json()
+    expect(count).toBe(7)
+    expect(Object.fromEntries(data.map((battle: { id: string; winnerCharacterId: string }) => [battle.id, battle.winnerCharacterId]))).toEqual({
+      'takumi-vs-keisuke-akina': 'takumi-fujiwara',
+      'takumi-vs-nakazato-akina': 'takumi-fujiwara',
+      'takumi-vs-shingo-akina': 'takumi-fujiwara',
+      'takumi-vs-mako-usui': 'takumi-fujiwara',
+      'keisuke-vs-nakazato-myogi': 'keisuke-takahashi',
+      'takumi-vs-kenta-myogi': 'takumi-fujiwara',
+      'takumi-vs-ryosuke-akina': 'takumi-fujiwara',
+    })
+    const keisuke = await app.request('/api/v1/characters/keisuke-takahashi')
+    expect((await keisuke.json()).data.record).toEqual({ wins: 1, losses: 1, total: 2 })
+    const nakazato = await app.request('/api/v1/characters/takeshi-nakazato')
+    expect((await nakazato.json()).data.record).toEqual({ wins: 0, losses: 2, total: 2 })
+    const sileighty = await app.request('/api/v1/vehicles/nissan-sileighty')
+    expect((await sileighty.json()).data.specifications).toEqual({})
   })
 
   test('connects each battle to known people, vehicles, passes and a winner', async () => {
