@@ -48,7 +48,7 @@
 | **峠** | 作中の峠名から関連するバトルを探索 |
 | **バトル** | 参加者・車種・峠・勝者を参照し、条件で絞り込み |
 
-**First Stageから、まずは7つの主要なドライバー対戦を。** キャラクター7件・車種7件・峠名3件・出典14件を収録しています。戦績は収録済みの対戦だけの集計です。
+**First Stage・Second Stageの主要なドライバー対戦を。** キャラクター10件・車種10件・峠名5件・バトル12件・出典21件を収録しています。戦績は収録済みの対戦だけの集計です。
 
 <br>
 
@@ -71,7 +71,7 @@ curl -s "$BASE_URL/api/v1/characters/takumi-fujiwara" | jq
     "name": "藤原拓海",
     "vehicleIds": ["toyota-ae86-trueno"],
     "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"],
-    "record": { "wins": 6, "losses": 0, "total": 6 }
+    "record": { "wins": 8, "losses": 1, "total": 9 }
   }
 }
 ```
@@ -81,6 +81,15 @@ curl -s "$BASE_URL/api/v1/characters/takumi-fujiwara" | jq
 ```sh
 curl -s "$BASE_URL/api/v1/battles?passId=akina" | jq
 ```
+
+**Second Stageだけを取得する。** キャラクター・峠の条件とも組み合わせられます。
+
+```sh
+curl -s "$BASE_URL/api/v1/battles?stage=second-stage" | jq
+curl -s "$BASE_URL/api/v1/battles?stage=second-stage&characterId=takumi-fujiwara&passId=akagi" | jq
+```
+
+`stage`省略時は全Stageを返します。不明な値は400です。キャラクターの`record`はStageによらず全収録対戦を集計します。
 
 [ブラウザーでAPIドキュメントを開く ↗](https://initial-d-fan-api.saitoudayooooon-jo.com/docs) · [OpenAPI JSON](https://initial-d-fan-api.saitoudayooooon-jo.com/openapi.json)
 
@@ -97,7 +106,7 @@ curl -s "$BASE_URL/api/v1/battles?passId=akina" | jq
 | GET | `/api/v1/vehicles/{id}` | 車種詳細 |
 | GET | `/api/v1/passes` | 作中の峠名一覧。位置情報は含まない |
 | GET | `/api/v1/passes/{id}` | 峠名詳細 |
-| GET | `/api/v1/battles` | バトル一覧。`characterId`と`passId`で絞り込み可能 |
+| GET | `/api/v1/battles` | バトル一覧。`characterId`・`passId`・`stage`で絞り込み可能 |
 | GET | `/api/v1/battles/{id}` | 参加者、車種、峠、勝者を参照 |
 | GET | `/api/v1/sources` | 出典一覧 |
 
@@ -112,11 +121,13 @@ Cloudflareの制限により、Python標準ライブラリ`urllib`の既定User-
 <a name="data"></a>
 <h2><img src="assets/readme/heading-data.svg" alt="データと出典" width="100%"></h2>
 
-現在はアニメFirst Stageで描かれた主要なドライバー対戦7件を収録しています。キャラクター7件、車種7件、峠名3件、出典14件です。全登場人物や脇の対戦を網羅したものではなく、Stage区分のフィールドもありません。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
+現在はアニメFirst Stageの7件とSecond Stageの5件、計12件の主要なドライバー対戦を収録しています。キャラクター10件、車種10件、峠名5件、出典21件です。全登場人物や脇の対戦を網羅したものではありません。各バトルの`stage`は`first-stage` / `second-stage`です。画像、ロゴ、作中の文章、台詞、地図、座標、MFゴーストのデータは含めていません。
+
+Second Stageの追加対戦は「中里対清次（妙義）」「拓海対清次（秋名）」「拓海対京一（赤城）」「涼介対京一（赤城）」「拓海対渉（正丸）」です。拓海対京一はエンジンブローによる走行終了を京一の勝ち・拓海の負けとして集計します。正式な競技結果を示すものではありません。京一とのいろは坂での再戦はThird Stageのため含めません。啓介対清次（Battle Stage追加映像）も対象外です。
 
 `record`は**このリポジトリに収録したドライバー対戦の集計**であり、作品全体の通算戦績ではありません。碓氷戦はドライバーの佐藤真子を参加者として登録し、ナビゲーターは現在の戦績対象に含めていません。車種の`specifications`は実在するベース車両の一般的な型式・エンジン系列等で、作中車両の改造状態や出力値を表しません。確認できない仕様は省略します。改造車のシルエイティには特定の車台型式を推測して付けず、仕様を空欄にしています。
 
-データは [`data/catalog.json`](data/catalog.json) にあります。各項目の`sourceIds`が`/api/v1/sources`の出典を指します。出典URL、発行元、確認日を保持し、起動時にスキーマ、IDの重複、参照先、バトルの参加者と勝者を検証します。収録範囲はFirst Stageの配信元による各話案内、勝敗はヤンマガWebの記事、車種の一般仕様は自動車メーカーの資料で照合しました。文章は転載せず、短い事実項目として入力しています。データの変更は管理者だけが行います。追加・訂正の提案の出し方は [`CONTRIBUTING.md`](CONTRIBUTING.md) を参照してください。
+データは [`data/catalog.json`](data/catalog.json) にあります。各項目の`sourceIds`が`/api/v1/sources`の出典を指します。出典URL、発行元、確認日を保持し、起動時にスキーマ、IDの重複、参照先、バトルの参加者と勝者を検証します。収録範囲はFirst Stage・Second Stageの配信元による各話案内、勝敗はヤンマガWebの記事、車種の一般仕様は自動車メーカーの資料で照合しました。文章は転載せず、短い事実項目として入力しています。データの変更は管理者だけが行います。Second Stageの出典対応・集計方針は [確認メモ](docs/second-stage-sources.md)、次期リリースの変更点は [CHANGELOG.md](CHANGELOG.md) を参照してください。追加・訂正の提案の出し方は [`CONTRIBUTING.md`](CONTRIBUTING.md) を参照してください。
 
 <br>
 

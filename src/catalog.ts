@@ -37,6 +37,8 @@ export const passSchema = z.object({
   sourceIds,
 }).strict().openapi('Pass')
 
+export const stageSchema = z.enum(['first-stage', 'second-stage']).openapi('Stage')
+
 export const battleSchema = z.object({
   id,
   passId: id,
@@ -46,6 +48,7 @@ export const battleSchema = z.object({
   ]),
   winnerCharacterId: id,
   sourceIds,
+  stage: stageSchema,
 }).strict().openapi('Battle')
 
 const catalogSchema = z.object({

@@ -25,6 +25,6 @@ describe('public review fixes', () => {
     const battle = (await (await app.request('/api/v1/battles/takumi-vs-kenta-myogi')).json()).data
     expect(battle.sourceIds).not.toContain('yanmaga-battle-04')
     const sources = (await (await app.request('/api/v1/sources')).json()).data
-    expect(sources.map((source: { id: string }) => source.id)).not.toContain('yanmaga-battle-04')
+    expect(sources.map((source: { id: string }) => source.id)).toContain('yanmaga-battle-04')
   })
 })

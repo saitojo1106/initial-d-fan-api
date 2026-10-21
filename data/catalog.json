@@ -97,50 +97,163 @@
       "url": "https://www.nissan.co.jp/HERITAGE/DETAIL/198.html",
       "publisher": "日産自動車",
       "checkedOn": "2026-10-20"
+    },
+    {
+      "id": "second-stage-episodes",
+      "title": "頭文字D Second Stage エピソード一覧",
+      "url": "https://www.b-ch.com/titles/4406/",
+      "publisher": "バンダイチャンネル",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "yanmaga-battle-04",
+      "title": "頭文字D名勝負列伝04 AE86対ランエボIV編",
+      "url": "https://yanmaga.jp/columns/articles/6",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "yanmaga-battle-05",
+      "title": "頭文字D名勝負列伝05 RX-7対ランエボIII編",
+      "url": "https://yanmaga.jp/columns/articles/2",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "yanmaga-battle-06",
+      "title": "頭文字D名勝負列伝06 ハチロク対ハチロク編",
+      "url": "https://yanmaga.jp/columns/articles/65",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "yanmaga-kyoichi",
+      "title": "頭文字D人物列伝06 須藤京一 編",
+      "url": "https://yanmaga.jp/columns/articles/2717",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "yanmaga-ryosuke",
+      "title": "頭文字D人物列伝23 高橋涼介 前編",
+      "url": "https://yanmaga.jp/columns/articles/3085",
+      "publisher": "ヤンマガWeb",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "id": "mitsubishi-lancer-history",
+      "title": "車の歴史 ランサーエボリューションIII・IV",
+      "url": "https://www.mitsubishi-motors.com/jp/company/history/car/",
+      "publisher": "三菱自動車",
+      "checkedOn": "2026-10-21"
     }
   ],
   "characters": [
     {
       "id": "takumi-fujiwara",
       "name": "藤原拓海",
-      "vehicleIds": ["toyota-ae86-trueno"],
-      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+      "vehicleIds": [
+        "toyota-ae86-trueno"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "yanmaga-battle-16"
+      ]
     },
     {
       "id": "keisuke-takahashi",
       "name": "高橋啓介",
-      "vehicleIds": ["mazda-fd3s-rx7"],
-      "sourceIds": ["yanmaga-battle-01", "yanmaga-nakazato"]
+      "vehicleIds": [
+        "mazda-fd3s-rx7"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "yanmaga-nakazato"
+      ]
     },
     {
       "id": "takeshi-nakazato",
       "name": "中里毅",
-      "vehicleIds": ["nissan-bnr32-gtr"],
-      "sourceIds": ["yanmaga-battle-16", "yanmaga-nakazato"]
+      "vehicleIds": [
+        "nissan-bnr32-gtr"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-16",
+        "yanmaga-nakazato"
+      ]
     },
     {
       "id": "shingo-shoji",
       "name": "庄司慎吾",
-      "vehicleIds": ["honda-eg6-civic"],
-      "sourceIds": ["yanmaga-battle-02"]
+      "vehicleIds": [
+        "honda-eg6-civic"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-02"
+      ]
     },
     {
       "id": "mako-sato",
       "name": "佐藤真子",
-      "vehicleIds": ["nissan-sileighty"],
-      "sourceIds": ["yanmaga-sileighty"]
+      "vehicleIds": [
+        "nissan-sileighty"
+      ],
+      "sourceIds": [
+        "yanmaga-sileighty"
+      ]
     },
     {
       "id": "kenta-nakamura",
       "name": "中村賢太",
-      "vehicleIds": ["nissan-s14-silvia"],
-      "sourceIds": ["yanmaga-battle-17"]
+      "vehicleIds": [
+        "nissan-s14-silvia"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-17"
+      ]
     },
     {
       "id": "ryosuke-takahashi",
       "name": "高橋涼介",
-      "vehicleIds": ["mazda-fc3s-rx7"],
-      "sourceIds": ["yanmaga-battle-03"]
+      "vehicleIds": [
+        "mazda-fc3s-rx7"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-03"
+      ]
+    },
+    {
+      "id": "seiji-iwaki",
+      "name": "岩城清次",
+      "vehicleIds": [
+        "mitsubishi-lancer-evolution-iv"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-04",
+        "second-stage-episodes"
+      ]
+    },
+    {
+      "id": "kyoichi-sudo",
+      "name": "須藤京一",
+      "vehicleIds": [
+        "mitsubishi-lancer-evolution-iii"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-05",
+        "yanmaga-kyoichi"
+      ]
+    },
+    {
+      "id": "wataru-akiyama",
+      "name": "秋山渉",
+      "vehicleIds": [
+        "toyota-ae86-levin"
+      ],
+      "sourceIds": [
+        "yanmaga-battle-06",
+        "second-stage-episodes"
+      ]
     }
   ],
   "vehicles": [
@@ -153,7 +266,10 @@
         "engineFamily": "4A-G",
         "driveLayout": "FR"
       },
-      "sourceIds": ["yanmaga-battle-01", "toyota-ae86-history"]
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "toyota-ae86-history"
+      ]
     },
     {
       "id": "mazda-fd3s-rx7",
@@ -163,7 +279,10 @@
         "chassisCode": "FD3S",
         "engineFamily": "13B"
       },
-      "sourceIds": ["yanmaga-battle-01", "mazda-rx7-history"]
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "mazda-rx7-history"
+      ]
     },
     {
       "id": "nissan-bnr32-gtr",
@@ -174,7 +293,10 @@
         "engineFamily": "RB26DETT",
         "driveLayout": "4WD"
       },
-      "sourceIds": ["yanmaga-battle-16", "nissan-r32-heritage"]
+      "sourceIds": [
+        "yanmaga-battle-16",
+        "nissan-r32-heritage"
+      ]
     },
     {
       "id": "honda-eg6-civic",
@@ -184,14 +306,19 @@
         "chassisCode": "EG6",
         "driveLayout": "FF"
       },
-      "sourceIds": ["yanmaga-battle-02", "honda-eg6-factbook"]
+      "sourceIds": [
+        "yanmaga-battle-02",
+        "honda-eg6-factbook"
+      ]
     },
     {
       "id": "nissan-sileighty",
       "manufacturer": "日産",
       "model": "シルエイティ",
       "specifications": {},
-      "sourceIds": ["yanmaga-sileighty"]
+      "sourceIds": [
+        "yanmaga-sileighty"
+      ]
     },
     {
       "id": "nissan-s14-silvia",
@@ -200,7 +327,10 @@
       "specifications": {
         "chassisCode": "S14"
       },
-      "sourceIds": ["yanmaga-battle-17", "nissan-s14-heritage"]
+      "sourceIds": [
+        "yanmaga-battle-17",
+        "nissan-s14-heritage"
+      ]
     },
     {
       "id": "mazda-fc3s-rx7",
@@ -210,24 +340,93 @@
         "chassisCode": "FC3S",
         "engineFamily": "13B"
       },
-      "sourceIds": ["yanmaga-battle-03", "mazda-fc-rx7-history"]
+      "sourceIds": [
+        "yanmaga-battle-03",
+        "mazda-fc-rx7-history"
+      ]
+    },
+    {
+      "id": "mitsubishi-lancer-evolution-iv",
+      "manufacturer": "三菱",
+      "model": "ランサーエボリューション IV",
+      "specifications": {
+        "engineFamily": "4G63",
+        "driveLayout": "4WD"
+      },
+      "sourceIds": [
+        "yanmaga-battle-04",
+        "mitsubishi-lancer-history"
+      ]
+    },
+    {
+      "id": "mitsubishi-lancer-evolution-iii",
+      "manufacturer": "三菱",
+      "model": "ランサーエボリューション III",
+      "specifications": {
+        "engineFamily": "4G63",
+        "driveLayout": "4WD"
+      },
+      "sourceIds": [
+        "yanmaga-battle-05",
+        "mitsubishi-lancer-history"
+      ]
+    },
+    {
+      "id": "toyota-ae86-levin",
+      "manufacturer": "トヨタ",
+      "model": "カローラレビン",
+      "specifications": {
+        "chassisCode": "AE86",
+        "engineFamily": "4A-G",
+        "driveLayout": "FR"
+      },
+      "sourceIds": [
+        "yanmaga-battle-06",
+        "toyota-ae86-history"
+      ]
     }
   ],
   "passes": [
     {
       "id": "akina",
       "name": "秋名",
-      "sourceIds": ["yanmaga-battle-01", "yanmaga-battle-16"]
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "yanmaga-battle-16"
+      ]
     },
     {
       "id": "myogi",
       "name": "妙義",
-      "sourceIds": ["yanmaga-battle-16", "yanmaga-battle-17", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-16",
+        "yanmaga-battle-17",
+        "first-stage-episodes"
+      ]
     },
     {
       "id": "usui",
       "name": "碓氷",
-      "sourceIds": ["yanmaga-sileighty", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-sileighty",
+        "first-stage-episodes"
+      ]
+    },
+    {
+      "id": "akagi",
+      "name": "赤城",
+      "sourceIds": [
+        "yanmaga-battle-05",
+        "yanmaga-kyoichi",
+        "second-stage-episodes"
+      ]
+    },
+    {
+      "id": "shomaru",
+      "name": "正丸",
+      "sourceIds": [
+        "second-stage-episodes"
+      ]
     }
   ],
   "battles": [
@@ -235,71 +434,244 @@
       "id": "takumi-vs-keisuke-akina",
       "passId": "akina",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "keisuke-takahashi",
+          "vehicleId": "mazda-fd3s-rx7"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-01", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-01",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "takumi-vs-nakazato-akina",
       "passId": "akina",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "takeshi-nakazato",
+          "vehicleId": "nissan-bnr32-gtr"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-16", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-16",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "takumi-vs-shingo-akina",
       "passId": "akina",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "shingo-shoji", "vehicleId": "honda-eg6-civic" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "shingo-shoji",
+          "vehicleId": "honda-eg6-civic"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-02", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-02",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "takumi-vs-mako-usui",
       "passId": "usui",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "mako-sato", "vehicleId": "nissan-sileighty" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "mako-sato",
+          "vehicleId": "nissan-sileighty"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-sileighty", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-sileighty",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "keisuke-vs-nakazato-myogi",
       "passId": "myogi",
       "participants": [
-        { "characterId": "keisuke-takahashi", "vehicleId": "mazda-fd3s-rx7" },
-        { "characterId": "takeshi-nakazato", "vehicleId": "nissan-bnr32-gtr" }
+        {
+          "characterId": "keisuke-takahashi",
+          "vehicleId": "mazda-fd3s-rx7"
+        },
+        {
+          "characterId": "takeshi-nakazato",
+          "vehicleId": "nissan-bnr32-gtr"
+        }
       ],
       "winnerCharacterId": "keisuke-takahashi",
-      "sourceIds": ["yanmaga-nakazato", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-nakazato",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "takumi-vs-kenta-myogi",
       "passId": "myogi",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "kenta-nakamura", "vehicleId": "nissan-s14-silvia" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "kenta-nakamura",
+          "vehicleId": "nissan-s14-silvia"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-17", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-17",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
     },
     {
       "id": "takumi-vs-ryosuke-akina",
       "passId": "akina",
       "participants": [
-        { "characterId": "takumi-fujiwara", "vehicleId": "toyota-ae86-trueno" },
-        { "characterId": "ryosuke-takahashi", "vehicleId": "mazda-fc3s-rx7" }
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "ryosuke-takahashi",
+          "vehicleId": "mazda-fc3s-rx7"
+        }
       ],
       "winnerCharacterId": "takumi-fujiwara",
-      "sourceIds": ["yanmaga-battle-03", "first-stage-episodes"]
+      "sourceIds": [
+        "yanmaga-battle-03",
+        "first-stage-episodes"
+      ],
+      "stage": "first-stage"
+    },
+    {
+      "id": "nakazato-vs-seiji-myogi",
+      "stage": "second-stage",
+      "passId": "myogi",
+      "participants": [
+        {
+          "characterId": "takeshi-nakazato",
+          "vehicleId": "nissan-bnr32-gtr"
+        },
+        {
+          "characterId": "seiji-iwaki",
+          "vehicleId": "mitsubishi-lancer-evolution-iv"
+        }
+      ],
+      "winnerCharacterId": "seiji-iwaki",
+      "sourceIds": [
+        "second-stage-episodes",
+        "yanmaga-battle-04",
+        "yanmaga-nakazato"
+      ]
+    },
+    {
+      "id": "takumi-vs-seiji-akina",
+      "stage": "second-stage",
+      "passId": "akina",
+      "participants": [
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "seiji-iwaki",
+          "vehicleId": "mitsubishi-lancer-evolution-iv"
+        }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": [
+        "yanmaga-battle-04",
+        "second-stage-episodes",
+        "yanmaga-battle-05"
+      ]
+    },
+    {
+      "id": "takumi-vs-kyoichi-akagi",
+      "stage": "second-stage",
+      "passId": "akagi",
+      "participants": [
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "kyoichi-sudo",
+          "vehicleId": "mitsubishi-lancer-evolution-iii"
+        }
+      ],
+      "winnerCharacterId": "kyoichi-sudo",
+      "sourceIds": [
+        "yanmaga-kyoichi",
+        "second-stage-episodes"
+      ]
+    },
+    {
+      "id": "ryosuke-vs-kyoichi-akagi",
+      "stage": "second-stage",
+      "passId": "akagi",
+      "participants": [
+        {
+          "characterId": "ryosuke-takahashi",
+          "vehicleId": "mazda-fc3s-rx7"
+        },
+        {
+          "characterId": "kyoichi-sudo",
+          "vehicleId": "mitsubishi-lancer-evolution-iii"
+        }
+      ],
+      "winnerCharacterId": "ryosuke-takahashi",
+      "sourceIds": [
+        "yanmaga-battle-05",
+        "yanmaga-ryosuke",
+        "second-stage-episodes"
+      ]
+    },
+    {
+      "id": "takumi-vs-wataru-shomaru",
+      "stage": "second-stage",
+      "passId": "shomaru",
+      "participants": [
+        {
+          "characterId": "takumi-fujiwara",
+          "vehicleId": "toyota-ae86-trueno"
+        },
+        {
+          "characterId": "wataru-akiyama",
+          "vehicleId": "toyota-ae86-levin"
+        }
+      ],
+      "winnerCharacterId": "takumi-fujiwara",
+      "sourceIds": [
+        "yanmaga-battle-06",
+        "second-stage-episodes"
+      ]
     }
   ]
 }

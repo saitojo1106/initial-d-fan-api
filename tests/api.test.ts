@@ -11,11 +11,11 @@ describe('read-only catalog API', () => {
     expect(detail.status).toBe(200)
     const character = (await detail.json()).data
     expect(character.vehicleIds).toEqual(['toyota-ae86-trueno'])
-    expect(character.record).toEqual({ wins: 6, losses: 0, total: 6 })
+    expect(character.record).toEqual({ wins: 8, losses: 1, total: 9 })
   })
 
   test('includes the verified First Stage driver battles and their results', async () => {
-    const response = await app.request('/api/v1/battles')
+    const response = await app.request('/api/v1/battles?stage=first-stage')
     expect(response.status).toBe(200)
     const { data, count } = await response.json()
     expect(count).toBe(7)
@@ -31,7 +31,7 @@ describe('read-only catalog API', () => {
     const keisuke = await app.request('/api/v1/characters/keisuke-takahashi')
     expect((await keisuke.json()).data.record).toEqual({ wins: 1, losses: 1, total: 2 })
     const nakazato = await app.request('/api/v1/characters/takeshi-nakazato')
-    expect((await nakazato.json()).data.record).toEqual({ wins: 0, losses: 2, total: 2 })
+    expect((await nakazato.json()).data.record).toEqual({ wins: 0, losses: 3, total: 3 })
     const sileighty = await app.request('/api/v1/vehicles/nissan-sileighty')
     expect((await sileighty.json()).data.specifications).toEqual({})
   })
