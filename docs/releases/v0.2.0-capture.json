@@ -1,0 +1,17 @@
+[
+  {
+    "title": "01 / SECOND STAGE IS HERE",
+    "command": "curl -s \"$API/battles?stage=second-stage\" | jq '{count, battles: [.data[].id]}'",
+    "stdout": "{\n  \"count\": 5,\n  \"battles\": [\n    \"nakazato-vs-seiji-myogi\",\n    \"takumi-vs-seiji-akina\",\n    \"takumi-vs-kyoichi-akagi\",\n    \"ryosuke-vs-kyoichi-akagi\",\n    \"takumi-vs-wataru-shomaru\"\n  ]\n}\n"
+  },
+  {
+    "title": "02 / FIND A SPECIFIC BATTLE",
+    "command": "curl -s \"$API/battles?stage=second-stage&characterId=takumi-fujiwara&passId=akagi\" | jq '{count, battle: (.data[0] | {id, stage, passId, winnerCharacterId})}'",
+    "stdout": "{\n  \"count\": 1,\n  \"battle\": {\n    \"id\": \"takumi-vs-kyoichi-akagi\",\n    \"stage\": \"second-stage\",\n    \"passId\": \"akagi\",\n    \"winnerCharacterId\": \"kyoichi-sudo\"\n  }\n}\n"
+  },
+  {
+    "title": "03 / RECORDS ACROSS BOTH STAGES",
+    "command": "curl -s \"$API/characters/takumi-fujiwara\" | jq '.data | {id, record}'",
+    "stdout": "{\n  \"id\": \"takumi-fujiwara\",\n  \"record\": {\n    \"wins\": 8,\n    \"losses\": 1,\n    \"total\": 9\n  }\n}\n"
+  }
+]
