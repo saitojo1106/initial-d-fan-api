@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">Initial D Fan API</title><desc id="desc">An unofficial REST API. Original mountain road illustration in charcoal and yellow.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs>
+<rect width="1200" height="440" rx="16" fill="#101417"/><rect width="1200" height="440" rx="16" fill="url(#grid)"/>
+<path d="M700 320L850 100L950 230L1030 130L1200 320" fill="#1b2329"/>
+<path d="M840 460L840 365Q840 320 1000 310Q1140 300 1110 240Q1095 212 1025 207L960 200Q910 192 942 165L1005 114" fill="none" stroke="#52606a" stroke-width="72"/>
+<path d="M840 460L840 365Q840 320 1000 310Q1140 300 1110 240Q1095 212 1025 207L960 200Q910 192 942 165L1005 114" fill="none" stroke="#202a31" stroke-width="62"/>
+<path d="M840 460L840 365Q840 320 1000 310Q1140 300 1110 240Q1095 212 1025 207L960 200Q910 192 942 165L1005 114" fill="none" stroke="#f1d35b" stroke-width="3" stroke-dasharray="14 14"/>
+<g font-family="Arial, Helvetica, sans-serif"><rect x="52" y="48" width="8" height="20" fill="#f1d35b"/>
+<text x="74" y="64" fill="#f1d35b" font-size="16" letter-spacing="3">UNOFFICIAL / READ-ONLY REST API</text>
+<text x="52" y="164" fill="#f7f7ef" font-size="72" font-weight="800" letter-spacing="-3">Initial D</text>
+<text x="52" y="242" fill="#f7f7ef" font-size="72" font-weight="800" letter-spacing="-3">Fan API<tspan fill="#f1d35b">.</tspan></text>
+<text x="56" y="296" fill="#aebbc2" font-size="19">Characters. Vehicles. Passes. Battles.</text>
+<path d="M56 338H660" stroke="#39434a"/>
+<text x="56" y="378" fill="#f1d35b" font-size="15" letter-spacing="2">FIRST STAGE COLLECTION</text>
+<text x="56" y="406" fill="#aebbc2" font-size="14">Hono + TypeScript / Cloudflare Workers / OpenAPI 3.1</text>
+</g></svg>
