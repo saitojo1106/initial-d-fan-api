@@ -8,6 +8,7 @@ import {
   passSchema,
   recordFor,
   sourceSchema,
+  stageSchema,
   vehicleSchema,
 } from './catalog'
 
@@ -103,13 +104,14 @@ app.openapi(createRoute({
 
 app.openapi(createRoute({
   method: 'get', path: '/api/v1/battles', tags: ['Battles'], summary: 'List documented battles',
-  request: { query: z.object({ characterId: z.string().optional(), passId: z.string().optional() }) },
+  request: { query: z.object({ characterId: z.string().optional(), passId: z.string().optional(), stage: stageSchema.optional() }) },
   responses: { 200: { description: 'Battle results included in this dataset', content: { 'application/json': { schema: listResponse(battleSchema) } } } },
 }), (c) => {
-  const { characterId, passId } = c.req.valid('query')
+  const { characterId, passId, stage } = c.req.valid('query')
   const items = catalog.battles.filter((battle) =>
     (!characterId || battle.participants.some((participant) => participant.characterId === characterId)) &&
-    (!passId || battle.passId === passId),
+    (!passId || battle.passId === passId) &&
+    (!stage || battle.stage === stage),
   )
   return c.json(list(items), 200)
 })
@@ -136,8 +138,8 @@ app.doc31('/openapi.json', {
   openapi: '3.1.0',
   info: {
     title: 'Initial D Fan API',
-    version: '0.1.0',
-    description: 'Unofficial, non-affiliated read-only API covering selected driver battles from the First Stage anime. Character records count only battles included in this dataset. No images, maps or story text are provided.',
+    version: '0.2.0',
+    description: 'Unofficial, non-affiliated read-only API covering selected driver battles from the First Stage and Second Stage anime. Character records count only battles included in this dataset. No images, maps or story text are provided.',
   },
   externalDocs: { description: 'Source code, data and rights notes', url: 'https://github.com/saitojo1106/initial-d-fan-api' },
 })

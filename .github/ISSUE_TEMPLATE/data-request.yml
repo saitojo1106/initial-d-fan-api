@@ -29,7 +29,7 @@ body:
     id: facts
     attributes:
       label: 確認した事実
-      description: バトルはドライバー2名、使用車種、峠名、勝者を書いてください。車両仕様はメーカー資料で確認できた項目だけ。
+      description: バトルはStage区分、ドライバー2名、使用車種、峠名、勝者を書いてください。車両仕様はメーカー資料で確認できた項目だけ。
     validations:
       required: true
   - type: textarea
