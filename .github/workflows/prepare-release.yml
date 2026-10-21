@@ -1,0 +1,44 @@
+name: Prepare v0.2.0 release draft
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/prepare-release.yml
+      - docs/releases/v0.2.0.md
+      - assets/releases/v0.2.0-demo.gif
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-v0.2.0-release
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      SOURCE_SHA: ${{ github.sha }}
+      TARGET_SHA: abf06f19a1b9ecfcc9def1a77f0a148fe2839fe2
+    steps:
+      - name: Download the release notes and local preview GIF
+        run: |
+          gh api -H 'Accept: application/vnd.github.raw+json' "repos/$GH_REPO/contents/docs/releases/v0.2.0.md?ref=$SOURCE_SHA" > release-notes.md
+          gh api -H 'Accept: application/vnd.github.raw+json' "repos/$GH_REPO/contents/assets/releases/v0.2.0-demo.gif?ref=$SOURCE_SHA" > second-stage-demo.gif
+      - name: Create or refresh a draft, without publishing
+        run: |
+          set -euo pipefail
+          if gh release view v0.2.0 --json isDraft > release-state.json 2>/dev/null; then
+            if [ "$(jq -r .isDraft release-state.json)" != true ]; then
+              echo 'v0.2.0 is already published; leaving it unchanged.'
+              exit 0
+            fi
+            gh release edit v0.2.0 --title 'v0.2.0 — Second Stage対応' --notes-file release-notes.md
+            gh release upload v0.2.0 second-stage-demo.gif --clobber
+          else
+            gh release create v0.2.0 second-stage-demo.gif --draft --target "$TARGET_SHA" --title 'v0.2.0 — Second Stage対応' --notes-file release-notes.md
+          fi
